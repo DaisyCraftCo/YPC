@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Private Chef in [City Name] | YPC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to extend Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1555243896-c709b02b2791?q=80&w=2940&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Styles for the form */
+        .form-step {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .form-step.active {
+            display: block;
+            opacity: 1;
+        }
+        .form-input {
+            @apply w-full bg-gray-700 border border-gray-600 rounded-lg py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all;
+        }
+        .form-label {
+            @apply font-bold mb-2 block text-lg text-gray-200;
+        }
+        .form-radio-label {
+            @apply flex items-center justify-center text-center bg-gray-700 p-4 rounded-lg cursor-pointer border-2 border-gray-700 transition-all duration-300 relative;
+        }
+        .form-radio-label:has(input:checked) {
+            @apply bg-amber-500/10 border-amber-500 text-amber-400 font-semibold;
+        }
+        .form-radio-label .check-icon {
+            @apply absolute top-2 right-2 h-5 w-5 text-amber-500 opacity-0 transition-opacity duration-300;
+        }
+        .form-radio-label:has(input:checked) .check-icon {
+            @apply opacity-100;
+        }
+        .progress-bar-fill {
+            transition: width 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Header -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold font-serif-display text-amber-400">YPC</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#how-it-works" class="hover:text-amber-400 transition-colors">How It Works</a>
+                <a href="#occasions" class="hover:text-amber-400 transition-colors">Occasions</a>
+                <a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
+            </div>
+            <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105">
+                Find Your Chef
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg relative text-white py-24 md:py-40">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold font-serif-display leading-tight">Find Your Perfect Private Chef in</h1>
+                <h2 class="text-4xl md:text-6xl font-extrabold font-serif-display text-amber-400 mt-2">[City Name]</h2>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
+                    Exceptional chefs for dinner parties, birthdays, and special occasions. We handle the matchmaking, so you can host the perfect event.
+                </p>
+                <a href="#contact" class="mt-10 inline-block bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-4 px-10 rounded-lg text-lg transition-transform hover:scale-105">
+                    Book Your Private Chef Now!
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold font-serif-display">Why Settle for Just Any Chef?</h2>
+                    <p class="mt-3 text-lg text-gray-400 max-w-2xl mx-auto">Our tailored matchmaking pairs you with a chef whose style and talent fit your unique occasion.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature Cards -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-amber-400 transition-all duration-300 transform hover:-translate-y-2"><div class="text-amber-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4 2-4 1.5 3H20.8"/></svg></div><h3 class="font-bold text-xl mb-2">Chef-Driven Matchmaking</h3><p class="text-gray-400">With 3 Michelin experience, our founders personally vet and pair you with elite culinary talent.</p></div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-amber-400 transition-all duration-300 transform hover:-translate-y-2"><div class="text-amber-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></div><h3 class="font-bold text-xl mb-2">Completely Custom Menus</h3><p class="text-gray-400">Forget restrictive set menus. Your chef will design a unique culinary experience just for your event.</p></div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-amber-400 transition-all duration-300 transform hover:-translate-y-2"><div class="text-amber-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="font-bold text-xl mb-2">Skip The Guesswork</h3><p class="text-gray-400">We save you time by connecting you only with professional, available chefs skilled in what you need.</p></div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-amber-400 transition-all duration-300 transform hover:-translate-y-2"><div class="text-amber-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.59a2 2 0 0 1-2.83-2.83l.79-.79"/><path d="M18 12.01h.01"/></svg></div><h3 class="font-bold text-xl mb-2">Zero Cost, No Signup</h3><p class="text-gray-400">Our consultation and matchmaking services are completely free, private, and secure. No account needed.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works Section -->
+        <section id="how-it-works" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold font-serif-display">How To Find Your Chef</h2><p class="mt-3 text-lg text-gray-400">A simple, streamlined process to culinary perfection.</p></div>
+                <div class="relative"><div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 border-t-2 border-dashed border-gray-600 -translate-y-1/2"></div><div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative"><div class="text-center"><div class="relative inline-block"><div class="w-24 h-24 rounded-full bg-amber-500 text-gray-900 flex items-center justify-center text-4xl font-bold font-serif-display mx-auto">1</div></div><h3 class="text-2xl font-bold mt-6 mb-3">Tell Us Your Vision</h3><p class="text-gray-400">Describe the private dining experience you have in mind—the occasion, cuisine, and style.</p></div><div class="text-center"><div class="relative inline-block"><div class="w-24 h-24 rounded-full bg-amber-500 text-gray-900 flex items-center justify-center text-4xl font-bold font-serif-display mx-auto">2</div></div><h3 class="text-2xl font-bold mt-6 mb-3">We Find The Best Match</h3><p class="text-gray-400">We tap into our network to find the most qualified, available chef based on your criteria.</p></div><div class="text-center"><div class="relative inline-block"><div class="w-24 h-24 rounded-full bg-amber-500 text-gray-900 flex items-center justify-center text-4xl font-bold font-serif-display mx-auto">3</div></div><h3 class="text-2xl font-bold mt-6 mb-3">Connect & Finalize</h3><p class="text-gray-400">We connect you directly with the chef to finalize the menu and details for an unforgettable event.</p></div></div></div>
+            </div>
+        </section>
+
+        <!-- Inquiry Form Section -->
+        <section id="contact" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold font-serif-display">Get In Touch</h2><p class="mt-3 text-lg text-gray-400 max-w-2xl mx-auto">Tell us about your event, and we'll start the matchmaking process.</p></div>
+                <div class="max-w-3xl mx-auto bg-gray-800 p-8 sm:p-12 rounded-xl shadow-2xl border border-gray-700">
+                    <!-- Progress Bar -->
+                    <div class="mb-8">
+                        <div class="w-full bg-gray-700 rounded-full h-2.5"><div id="progress-bar" class="bg-amber-500 h-2.5 rounded-full progress-bar-fill" style="width: 33.33%;"></div></div>
+                        <div class="flex justify-between mt-2 text-sm text-gray-400 font-medium">
+                            <span class="w-1/3 text-center transition-colors" id="progress-label-1">Event Details</span>
+                            <span class="w-1/3 text-center transition-colors opacity-50" id="progress-label-2">Preferences</span>
+                            <span class="w-1/3 text-center transition-colors opacity-50" id="progress-label-3">Contact Info</span>
+                        </div>
+                    </div>
+
+                    <form id="inquiryForm" novalidate>
+                        <!-- Step 1: Event Details -->
+                        <div id="step-1" class="form-step active">
+                            <div class="space-y-6">
+                                <div><label for="event-date" class="form-label">Ideal Date of Event</label><input type="date" id="event-date" name="event_date" class="form-input" required></div>
+                                <div><label for="guest-count" class="form-label">Number of Guests (est.)</label><input type="number" id="guest-count" name="guest_count" class="form-input" placeholder="e.g., 8" min="1" required></div>
+                                <div><label for="event-type" class="form-label">Type of Event</label><select id="event-type" name="event_type" class="form-input" required><option value="" disabled selected>Select an occasion...</option><option value="Dinner Party">Dinner Party</option><option value="Birthday Celebration">Birthday Celebration</option><option value="Special Occasion">Special Occasion (Anniversary, etc.)</option><option value="Holiday Dinner">Holiday Dinner</option><option value="Bachelorette Party">Bachelorette Party</option><option value="Vacation/Getaway">Vacation/Getaway</option><option value="Other">Other</option></select></div>
+                            </div>
+                            <div class="mt-8 text-right"><button type="button" class="next-btn bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition-transform hover:scale-105">Continue</button></div>
+                        </div>
+
+                        <!-- Step 2: Culinary Preferences -->
+                        <div id="step-2" class="form-step">
+                            <div class="space-y-6">
+                                <div><label for="dietary-restrictions" class="form-label">Any dietary restrictions or allergies?</label><textarea id="dietary-restrictions" name="dietary_restrictions" class="form-input" rows="3" placeholder="e.g., Gluten-free, nut allergy, vegan..."></textarea></div>
+                                <div><label for="special-requests" class="form-label">Special requests, cravings, or theme ideas?</label><textarea id="special-requests" name="special_requests" class="form-input" rows="3" placeholder="e.g., Surprise birthday, specific favorite dishes..."></textarea></div>
+                                <div><label class="form-label">Estimated Budget (per person)</label><div class="grid grid-cols-2 md:grid-cols-4 gap-4"><label class="form-radio-label"><input type="radio" name="budget" value="$" class="hidden">$75 - $125<svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></label><label class="form-radio-label"><input type="radio" name="budget" value="$$" class="hidden">$125 - $200<svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></label><label class="form-radio-label"><input type="radio" name="budget" value="$$$" class="hidden">$200+<svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></label><label class="form-radio-label"><input type="radio" name="budget" value="?" class="hidden">Not Sure<svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></label></div></div>
+                                <div><label class="form-label">Preferred Service Style</label><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><label class="form-radio-label"><input type="radio" name="service_style" value="Plated Multi-course" class="hidden">Plated Multi-course<svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></label><label class="form-radio-label"><input type="radio" name="service_style" value="Buffet Style" class="hidden">Buffet Style<svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></label><label class="form-radio-label"><input type="radio" name="service_style" value="Small Plates" class="hidden">Small Plates / Tapas<svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></label></div></div>
+                            </div>
+                            <div class="mt-8 flex justify-between"><button type="button" class="back-btn bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 px-8 rounded-lg transition-transform hover:scale-105">Back</button><button type="button" class="next-btn bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition-transform hover:scale-105">Continue</button></div>
+                        </div>
+
+                        <!-- Step 3: Contact Information -->
+                        <div id="step-3" class="form-step">
+                             <div class="space-y-6">
+                                 <div><label for="full-name" class="form-label">Full Name</label><input type="text" id="full-name" name="full_name" class="form-input" placeholder="e.g., Jane Doe" required></div>
+                                 <div><label for="email" class="form-label">Email Address</label><input type="email" id="email" name="email" class="form-input" placeholder="e.g., jane.doe@example.com" required></div>
+                                 <div><label for="phone" class="form-label">Phone Number</label><input type="tel" id="phone" name="phone" class="form-input" placeholder="e.g., (555) 123-4567" required></div>
+                             </div>
+                            <div class="mt-8 flex justify-between"><button type="button" class="back-btn bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 px-8 rounded-lg transition-transform hover:scale-105">Back</button><button type="submit" class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition-transform hover:scale-105">Submit Inquiry</button></div>
+                        </div>
+                        
+                        <!-- Step 4: Success Message -->
+                        <div id="step-4" class="form-step text-center py-8">
+                            <div class="w-24 h-24 mx-auto bg-green-500/10 rounded-full flex items-center justify-center border-4 border-green-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></div>
+                            <h3 class="text-3xl font-bold font-serif-display mt-6">Thank You!</h3>
+                            <p class="text-gray-300 mt-2 text-lg">Your inquiry has been sent. We will review the details and get back to you within 24 hours to connect you with the perfect chef.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-gray-900 text-gray-400">
+        <!-- Footer content... -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('inquiryForm');
+            const steps = Array.from(document.querySelectorAll('.form-step'));
+            const nextBtns = document.querySelectorAll('.next-btn');
+            const backBtns = document.querySelectorAll('.back-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const progressLabels = [
+                document.getElementById('progress-label-1'),
+                document.getElementById('progress-label-2'),
+                document.getElementById('progress-label-3')
+            ];
+            
+            let currentStep = 0;
+
+            const updateProgressLabels = (stepIndex) => {
+                progressLabels.forEach((label, index) => {
+                    if (index === stepIndex) {
+                        label.classList.remove('opacity-50');
+                    } else {
+                        label.classList.add('opacity-50');
+                    }
+                });
+            };
+            
+            const showStep = (stepIndex) => {
+                steps.forEach((step, index) => {
+                    step.classList.toggle('active', index === stepIndex);
+                });
+                
+                const progressPercentage = (stepIndex / (steps.length - 2)) * 100;
+                progressBar.style.width = `${Math.min(progressPercentage, 100)}%`;
+
+                if (stepIndex < progressLabels.length) {
+                    updateProgressLabels(stepIndex);
+                }
+
+                if (stepIndex === steps.length - 1) {
+                    progressBar.style.width = '100%';
+                    progressLabels.forEach(label => label.classList.add('opacity-50'));
+                }
+            };
+            
+            const validateStep = (stepIndex) => {
+                const currentStepElement = steps[stepIndex];
+                const inputs = currentStepElement.querySelectorAll('input[required], select[required]');
+                let isValid = true;
+                
+                inputs.forEach(input => {
+                    input.classList.remove('border-red-500');
+                    if (!input.value.trim() || (input.type === 'email' && !/^\S+@\S+\.\S+$/.test(input.value))) {
+                        isValid = false;
+                        input.classList.add('border-red-500');
+                    }
+                });
+                
+                return isValid;
+            };
+
+            nextBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (validateStep(currentStep)) {
+                        if (currentStep < steps.length - 2) { 
+                            currentStep++;
+                            showStep(currentStep);
+                        }
+                    }
+                });
+            });
+
+            backBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (currentStep > 0) {
+                        currentStep--;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); 
+                if (validateStep(currentStep)) {
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+                    console.log('Form Submitted Data:', data);
+                    
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            });
+
+            showStep(currentStep);
+        });
+    </script>
+</body>
+</html>
